@@ -1,4 +1,10 @@
 .done-true {
 	text-decoration: line-through;
-	color: grey;
+	color: #a8b6bf;
+}
+body {
+	background-color: #89bdd3;
+}
+.jumbotron {
+	background-color: #e3e3e3;
 }
