@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="todo">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Angular Todo Tutorial</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="todolist.js"></script>
+
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="css/todolist.css">
+
+    </head>
+    <body>
+	    <div class="jumbotron col-md-8 col-md-offset-2" ng-controller="TodoCtrl">
+	    	<h1>Hey, looks like you have {{getTotalTodos()}} things to do today!</h1>
+	    	<br>
+	    	<ul class="unstyled">
+	    		<li ng-repeat="todo in todos">
+ 					<input type="checkbox" ng-model="todo.done">
+ 					<span class="done-{{todo.done}}">{{todo.text}}</span>
+	    		</li>
+	    	</ul>
+
+	    	<form class="form-horizontal">
+	    		<input type="text" ng-model="formTodoText" ng-model=instant placeholder="new item here">
+	    		<button type="button" class="btn btn-success" ng-click="addTodo()">
+  					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Add
+				</button>
+
+	    		<button type="button" class="btn btn-danger" ng-click="clearCompleted()">
+  					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove
+				</button>
+	    	</form>
+
+	    </div>
+
+    </body>
+  
+</html>
